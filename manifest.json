@@ -1,0 +1,16 @@
+{
+  "manifest_version": 3,
+  "name": "Korean Web Typo Checker",
+  "description": "",
+  "version": "1.0",
+  "action": {
+    "default_popup": "src/index.html",
+    "default_icon": "extension_icon.jpeg"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["src/index.ts"]
+    }
+  ]
+}
