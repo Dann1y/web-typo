@@ -1,16 +1,23 @@
 {
+  "name": "한글 맞춤법",
   "manifest_version": 3,
-  "name": "Korean Web Typo Checker",
   "description": "",
-  "version": "1.0",
-  "action": {
-    "default_popup": "src/index.html",
-    "default_icon": "extension_icon.jpeg"
+  "version": "0.1.0",
+  "permissions": ["scripting", "activeTab"],
+  "background": {
+    "service_worker": "output/background.js"
   },
   "content_scripts": [
     {
       "matches": ["<all_urls>"],
-      "js": ["src/index.ts"]
+      "js": ["output/contentScript.js"]
     }
-  ]
+  ],
+  "action": {
+    "default_icon": {
+      "16": "./extension_icon.jpeg",
+      "32": "./extension_icon.jpeg"
+    },
+    "default_popup": "src/popup.html"
+  }
 }
